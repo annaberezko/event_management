@@ -11,8 +11,8 @@ class EventsAPIView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         user = self.request.user
         event_data = dict(serializer.validated_data)
-        event_type = event_data['event_type']
+        event_type = event_data['event_type'].lower()
         del event_data['event_type']
 
-        event, _ = EventType.objects.get_or_create(name__iexact=event_type)
+        event, _ = EventType.objects.get_or_create(name=event_type)
         Event.objects.create(**event_data, event_type=event, user=user)
