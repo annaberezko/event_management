@@ -6,6 +6,8 @@ For user authentication was used rest_framework.authtoken. You can also add djos
 
 If the incoming event name is not in the database, then create it. All event names are stored in the lower register to prevent data duplication.
 
+Create event post request covered by Test Cases
+
 ## Tech details
 
 |**Resource**|**Resource Name**|**Version**|

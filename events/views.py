@@ -1,12 +1,17 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 
+from events.filters import EventsFilter
 from events.models import Event, EventType
 from events.serializers import EventSerializer
 
 
 class EventsAPIView(generics.ListCreateAPIView):
-    queryset = Event.objects.all()
+    queryset = Event.objects.select_related('event_type').all()
     serializer_class = EventSerializer
+
+    filter_backends = (DjangoFilterBackend, )
+    filterset_class = EventsFilter
 
     def perform_create(self, serializer):
         user = self.request.user
