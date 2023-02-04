@@ -11,7 +11,8 @@ You can also add djoser library to extend the functionality of working with the 
 
 ### List of events
 
-System has list of user's events, with filtering by event_type name and timestamp date and time range.
+System has list of user's events, with filtering by event_type name and timestamp date and time range. 
+The system also includes an endpoint with list of all existing event names.
 
 ### Create event functionality
 
