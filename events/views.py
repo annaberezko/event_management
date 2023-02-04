@@ -3,7 +3,7 @@ from rest_framework import generics
 
 from events.filters import EventsFilter
 from events.models import Event, EventType
-from events.serializers import EventSerializer
+from events.serializers import EventSerializer, EventTypeSerializer
 
 
 class EventsAPIView(generics.ListCreateAPIView):
@@ -26,3 +26,8 @@ class EventsAPIView(generics.ListCreateAPIView):
 
         event, _ = EventType.objects.get_or_create(name=event_type)
         Event.objects.create(**event_data, event_type=event, user=user)
+
+
+class EventsTypesAPIView(generics.ListAPIView):
+    queryset = EventType.objects.all()
+    serializer_class = EventTypeSerializer
