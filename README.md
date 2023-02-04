@@ -1,10 +1,24 @@
 ## Event Management System 
 
-Event management system for keeping records of user events. Contains the type of event, its date and time, information about the event. To work with the system, the user must be registered and authenticated.
+Event management system for keeping records of user events. 
+Contains the type of event, its date and time, information about the event. 
+To work with the system, the user must be registered and authenticated.
 
-For user authentication was used rest_framework.authtoken. You can also add djoser library to extend the functionality of working with the User model.
+### Authentication
 
-If the incoming event name is not in the database, then create it. All event names are stored in the lower register to prevent data duplication.
+For user authentication was used rest_framework.authtoken. 
+You can also add djoser library to extend the functionality of working with the User model.
+
+### List of events
+
+System has list of user's events, with filtering by event_type name and timestamp date and time range.
+
+### Create event functionality
+
+When the user create the event, if the event's name isn't in the database, system add it automatically. 
+All event names are stored in the lower register to prevent data duplication.
+
+### API Test Cases
 
 Create event post request covered by Test Cases
 

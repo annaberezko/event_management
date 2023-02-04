@@ -13,6 +13,11 @@ class EventsAPIView(generics.ListCreateAPIView):
     filter_backends = (DjangoFilterBackend, )
     filterset_class = EventsFilter
 
+    def get_queryset(self):
+        if self.request.method == 'GET':
+            return Event.objects.select_related('event_type').filter(user=self.request.user)
+        return super().get_queryset()
+
     def perform_create(self, serializer):
         user = self.request.user
         event_data = dict(serializer.validated_data)
