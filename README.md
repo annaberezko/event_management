@@ -19,6 +19,10 @@ The system also includes an endpoint with list of all existing event names.
 When the user create the event, if the event's name isn't in the database, system add it automatically. 
 All event names are stored in the lower register to prevent data duplication.
 
+### Admin Panel
+
+Add Django admin panel with models Event and EventType. For the Event model, add filtering by event_type name and timestamp datetime range.
+
 ### API Test Cases
 
 Create event post request covered by Test Cases
@@ -78,8 +82,8 @@ export ENVIRONMENT = local    # environments keys (prod, local)
 export SECRET_KEY=some_key
 
 export DB_NAME = your_db_name
+
 export ALLOWED_HOSTS = your_allowed_hosts []
-export STATIC_URL = 'static/'
 ```
 
 Restart your terminal for changes to take effect.
