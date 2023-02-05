@@ -3,6 +3,9 @@ from django.urls import path, include
 
 from rest_framework.authtoken import views
 
+admin.site.site_header = 'Event management system'
+admin.site.site_title = 'Main administrator'
+
 v1_0_patterns = [
     path('api-token-auth/', views.obtain_auth_token, name='obtain_auth_token'),
     path('events/', include('events.urls')),
