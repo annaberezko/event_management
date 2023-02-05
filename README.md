@@ -87,3 +87,10 @@ export ALLOWED_HOSTS = your_allowed_hosts []
 ```
 
 Restart your terminal for changes to take effect.
+
+### Documentation
+
+Project has swagger autodocumentation with permission class AllowAny. This is the way how another developers can see all endpoints of the project.
+```sh
+BACK_END_DOMAIN_URL/api/v1.0/swagger/
+```

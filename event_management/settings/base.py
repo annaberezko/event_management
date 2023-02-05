@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rangefilter',
     'django_admin_listfilter_dropdown',
+    'drf_yasg',
     'events',
 ]
 
